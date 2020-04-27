@@ -17,7 +17,7 @@ npm start
 ### API
 ####  Sign Up
 
-Example (POST) : http://127.0.0.1:4000/api/auth/signin
+Example (POST) : http://127.0.0.1:4000/api/auth/signup
 ```json
 {
 	"username":"admin",
@@ -26,7 +26,7 @@ Example (POST) : http://127.0.0.1:4000/api/auth/signin
 ```
 ####  Sign In
 
-Example (POST) : http://127.0.0.1:4000/api/auth/signup
+Example (POST) : http://127.0.0.1:4000/api/auth/signin
 ```json
 {
 	"username":"admin",
