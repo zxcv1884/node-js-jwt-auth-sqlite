@@ -15,7 +15,7 @@ npm start
 ```
 
 ### API
-#####  Sign Up
+####  Sign Up
 
 Example (POST) : http://127.0.0.1:4000/api/auth/signin
 ```json
@@ -24,7 +24,7 @@ Example (POST) : http://127.0.0.1:4000/api/auth/signin
 	"password":"admin"
 }
 ```
-#####  Sign In
+####  Sign In
 
 Example (POST) : http://127.0.0.1:4000/api/auth/signup
 ```json
@@ -33,7 +33,7 @@ Example (POST) : http://127.0.0.1:4000/api/auth/signup
 	"password":"admin"
 }
 ```
-#####  Change Password
+####  Change Password
 
 Example (POST) : http://127.0.0.1:4000/api/auth/changePassword
 ```json
@@ -44,7 +44,7 @@ Example (POST) : http://127.0.0.1:4000/api/auth/changePassword
 }
 ```
 
-#####  Confirm token validity
+####  Confirm token validity
 
 Example (POST) : http://127.0.0.1:4000/api/auth/auth
 ```json
