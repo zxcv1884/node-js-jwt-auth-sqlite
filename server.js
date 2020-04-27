@@ -25,13 +25,13 @@ const createTable = db.prepare('CREATE TABLE IF NOT EXISTS  Users (user TEXT PRI
 createTable.run();
 
 // create default account
-const stmt = db.prepare('SELECT user, password FROM Users Where user = ?');
-const user = stmt.get('admin')
-if(!user){
-  const insert = db.prepare('INSERT INTO Users (user, password) VALUES (?, ?)');
-  insert.run('admin',bcrypt.hashSync("admin", 8));
-  insert.run('user',bcrypt.hashSync("user", 8));
-}
+// const stmt = db.prepare('SELECT user, password FROM Users Where user = ?');
+// const user = stmt.get('admin')
+// if(!user){
+//   const insert = db.prepare('INSERT INTO Users (user, password) VALUES (?, ?)');
+//   insert.run('admin',bcrypt.hashSync("admin", 8));
+//   insert.run('user',bcrypt.hashSync("user", 8));
+// }
 
 // simple route
 app.get("/", (req, res) => {
