@@ -40,13 +40,25 @@ exports.auth = (req, res) => {
       return res.status(401).send({
         message: "Unauthorized!"
       });
+    } else {
+      let user = stmt.get(decoded.username);
+      var passwordIsValid = bcrypt.compareSync(
+        decoded.password,
+        user.password
+      );
+      if (passwordIsValid) {
+        res.status(200).send({
+          username: decoded.username,
+          message: "Auth Success",
+        });
+        console.log(decoded)
+        console.log(decoded.username, 'Auth Success')
+      } else {
+        res.status(401).send({
+          message: "Unauthorized!"
+        });
+      }
     }
-    res.status(200).send({
-      username: decoded.username,
-      message: "Auth Success",
-    });
-    console.log(decoded)
-    console.log(decoded.username, 'Auth Success')
   });
 
 }
@@ -84,7 +96,7 @@ exports.signin = (req, res) => {
     });
   }
 
-  let token = jwt.sign({ username: user.user }, config.secret, {
+  let token = jwt.sign({ username: user.user, password: req.body.password }, config.secret, {
     expiresIn: 86400 // 24 hours
   });
   res.status(200).send({
